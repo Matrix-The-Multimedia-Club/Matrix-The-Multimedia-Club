@@ -64,6 +64,10 @@ export const AnimatedNavbar = ({ activeTab: externalActiveTab, onChange: externa
   const activeTab = externalActiveTab !== undefined ? externalActiveTab : internalActiveTab;
 
   const handleTabChange = (id) => {
+    if (id === "about") {
+  window.location.href = "/about";
+  return;
+}
     if (externalOnChange) {
       externalOnChange(id);
     } else {
