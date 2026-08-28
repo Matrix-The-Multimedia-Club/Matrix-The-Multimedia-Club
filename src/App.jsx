@@ -10,18 +10,33 @@ import { motion, AnimatePresence } from "motion/react"
 
 import AboutPage from "./components/AboutUs"
 
-const MainSite = () => {
+const App = () => {
+  const isAboutPath = window.location.pathname === "/about"
+
   const [activeTab, setActiveTab] = useState(() => {
+    if (isAboutPath) {
+      return "about"
+    }
     const hash = window.location.hash.replace("#", "")
     return ["home", "about", "events", "join", "contact"].includes(hash) ? hash : "home"
   })
 
+  // Sync state to hash if we are on the home page (pathname is NOT /about)
   useEffect(() => {
-    window.location.hash = activeTab
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [activeTab])
+    if (isAboutPath) {
+      if (activeTab !== "about") {
+        // User clicked a different tab from /about, redirect to home with hash
+        window.location.href = `/#${activeTab}`
+      }
+    } else {
+      window.location.hash = activeTab
+      window.scrollTo({ top: 0, behavior: "smooth" })
+    }
+  }, [activeTab, isAboutPath])
 
   useEffect(() => {
+    if (isAboutPath) return
+
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "")
       if (["home", "about", "events", "join", "contact"].includes(hash)) {
@@ -30,9 +45,13 @@ const MainSite = () => {
     }
     window.addEventListener("hashchange", handleHashChange)
     return () => window.removeEventListener("hashchange", handleHashChange)
-  }, [])
+  }, [isAboutPath])
 
   const renderContent = () => {
+    if (isAboutPath) {
+      return <AboutUs />
+    }
+
     switch (activeTab) {
       case "about":
         return <AboutUs />
@@ -62,7 +81,7 @@ const MainSite = () => {
     <div className="relative w-screen min-h-screen bg-black text-white overflow-x-hidden">
       <AnimatePresence mode="wait">
         <motion.div
-          key={activeTab}
+          key={isAboutPath ? "about-path" : activeTab}
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
@@ -77,14 +96,6 @@ const MainSite = () => {
       </div>
     </div>
   )
-}
-
-const App = () => {
-  if (window.location.pathname === "/about") {
-    return <AboutPage />
-  }
-
-  return <MainSite />
 }
 
 export default App
