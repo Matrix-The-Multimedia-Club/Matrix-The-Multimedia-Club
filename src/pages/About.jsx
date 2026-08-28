@@ -63,7 +63,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/president/YuvaBharti",
     quote: "Leadership is a practice of imperfect humans leading imperfect humans.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/yuva-bharti-bansal/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/yuva-bharti-bansal/" },
       { label: "Instagram", href: "https://www.instagram.com/yuvabbansal" },
     ],
   },
@@ -74,7 +74,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/president/darshanV",
     quote: "Vetrivel Veeravel.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/darshanv1/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/darshanv1/" },
       { label: "GitHub", href: "https://github.com/TheHashiramaSenju" },
     ],
   },
@@ -85,7 +85,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/design/NikhilMohammed",
     quote: "Design team — your idea, our canvas.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/nikhil-mohammed" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/nikhil-mohammed" },
       { label: "Instagram", href: "https://www.instagram.com/nikhil.mohammed" },
     ],
   },
@@ -96,7 +96,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/managers/PiyushKumarSingh",
     quote: "Connecting teams. Building systems. Delivering results.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/piyush-kumar-singh-b53749313/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/piyush-kumar-singh-b53749313/" },
       { label: "Instagram", href: "https://www.instagram.com/signature.piyush_/" },
     ],
   },
@@ -107,7 +107,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/Vishwajeet",
     quote: "If it’s not broken, give it time… we’ll fix it anyway.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/v7ksr/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/v7ksr/" },
       { label: "GitHub", href: "https://github.com/vKS-Rajput" },
     ],
   },
@@ -118,7 +118,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/DeepakShukla",
     quote: "Crafting full-stack experiences and teaching machines to read.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/deepak-shukla-27a60628a/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/deepak-shukla-27a60628a/" },
       { label: "GitHub", href: "https://github.com/deepak-158" },
     ],
   },
@@ -129,7 +129,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/AravAchari",
     quote: "Turning caffeine into code — full stack and generative AI.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/arav-achari-115715281/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/arav-achari-115715281/" },
       { label: "Instagram", href: "https://www.instagram.com/_arav_acharya_" },
     ],
   },
@@ -140,7 +140,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/SarthakJalan",
     quote: "Cloud and backend — deploying dreams, not just servers.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/sarthak-jalan-7685a7285/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/sarthak-jalan-7685a7285/" },
       { label: "GitHub", href: "https://github.com/sarthakjalan05" },
     ],
   },
@@ -151,7 +151,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/BhumikaVerma",
     quote: "Coding the future, one line at a time.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/bhumika-verma-648b9121b/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/bhumika-verma-648b9121b/" },
       { label: "GitHub", href: "https://github.com/bhumikaverma05" },
     ],
   },
@@ -161,7 +161,7 @@ const team = [
     department: "Technical",
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/Sreelakshmi",
     quote: "Training my future, one epoch at a time.",
-    links: [{ label: "Link", href: "https://www.Link.com/in/sreelakshmi-a-69100b296" }],
+    links: [{ label: "LinkedIn", href: "https://www.linkedin.com/in/sreelakshmi-a-69100b296" }],
   },
   {
     name: "Ayush Gupta",
@@ -170,7 +170,7 @@ const team = [
     image: "https://res.cloudinary.com/dfc9sgywk/image/upload/f_auto,q_auto,w_560,h_560,c_fill,g_face/matrix-club/team/technical/AyushGupta",
     quote: "Building scalable solutions and debugging life, one commit at a time.",
     links: [
-      { label: "Link", href: "https://www.Link.com/in/ayushkathil/" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/ayushkathil/" },
       { label: "Instagram", href: "https://www.instagram.com/ayush_kathil/" },
     ],
   },
@@ -228,7 +228,7 @@ export default function About() {
 
       <header className="site-nav">
         <div className="container nav-inner">
-          <a className="brand" href="#top" aria-label="The Matrix Club home">
+          <a className="brand" href="/" aria-label="The Matrix Club home">
             <span className="brand-mark-wrap">
               <img src={markImage} alt="" className="brand-mark" />
             </span>
@@ -357,7 +357,7 @@ export default function About() {
                           <div className="team-links">
                             {member.links.map((link) => (
                               <a key={link.label} href={link.href} target="_blank" rel="noreferrer" aria-label={`${member.name} ${link.label}`}>
-                                {link.label === "Link" ? <Link size={13} /> : <ArrowUpRight size={13} />}
+                                {link.label === "LinkedIn" ? <Link size={13} /> : <ArrowUpRight size={13} />}
                                 {link.label}
                               </a>
                             ))}
@@ -376,7 +376,7 @@ export default function About() {
 
       <footer className="site-footer" id="footer">
         <div className="container footer-top">
-          <a className="brand footer-brand" href="#top" aria-label="The Matrix Club home">
+          <a className="brand footer-brand" href="/" aria-label="The Matrix Club home">
             <span className="brand-mark-wrap"><img src={markImage} alt="" className="brand-mark" /></span>
             <span className="brand-copy"><span>THE MATRIX</span><strong>CLUB</strong></span>
           </a>
@@ -388,7 +388,7 @@ export default function About() {
         <div className="container footer-bottom">
           <span>© 2026 The Matrix Club</span>
           <span>Built by the people in the room <span className="footer-cross">+</span></span>
-          <div className="footer-socials"><a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.Link.com" target="_blank" rel="noreferrer">Link</a></div>
+          <div className="footer-socials"><a href="https://www.instagram.com" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></div>
         </div>
       </footer>
     </div>
