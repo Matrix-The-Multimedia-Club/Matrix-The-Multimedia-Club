@@ -8,7 +8,7 @@ import JoinUs from "./components/JoinUs"
 import ContactUs from "./components/ContactUs"
 import { motion, AnimatePresence } from "motion/react"
 
-const AboutPage = lazy(() => import("./pages/About"))
+import AboutPage from "./components/AboutUs"
 
 const MainSite = () => {
   const [activeTab, setActiveTab] = useState(() => {
@@ -81,11 +81,7 @@ const MainSite = () => {
 
 const App = () => {
   if (window.location.pathname === "/about") {
-    return (
-      <Suspense fallback={<div className="min-h-screen bg-black text-white">Loading About page...</div>}>
-        <AboutPage />
-      </Suspense>
-    )
+    return <AboutPage />
   }
 
   return <MainSite />
