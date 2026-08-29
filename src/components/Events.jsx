@@ -12,10 +12,15 @@ const Events = () => {
   const [activeTab, setActiveTab] = useState("upcoming");
 
   return (
-    <div className="w-full bg-[#0a0b0e] text-white flex flex-col min-h-screen pb-24">
-      <section className="relative w-full py-16 px-6 md:px-16 overflow-hidden flex-grow">
+    <div className="relative w-full text-white flex flex-col min-h-screen pb-24">
+      {/* Fixed background overlay */}
+      <div
+        className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url(/back.jpg)" }}
+      />
+      <section className="relative z-10 w-full py-16 px-6 md:px-16 overflow-hidden flex-grow">
         {/* Background Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-900/10 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none"  />
 
         <div className="max-w-6xl mx-auto flex flex-col gap-12 relative z-10">
 

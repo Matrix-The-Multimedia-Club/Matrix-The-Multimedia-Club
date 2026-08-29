@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import ParallaxBackground from "./components/ParallaxBackground"
 import MobileParallax from "./components/MobileParallax"
 import AnimatedNavbar from "./components/AnimatedNavbar"
@@ -8,7 +8,7 @@ import JoinUs from "./components/JoinUs"
 import ContactUs from "./components/ContactUs"
 import { motion, AnimatePresence } from "motion/react"
 
-import AboutPage from "./components/AboutUs"
+// import AboutPage from "./components/AboutUs"
 
 const App = () => {
   const isAboutPath = window.location.pathname === "/about"
