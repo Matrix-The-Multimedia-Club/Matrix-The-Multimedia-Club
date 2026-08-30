@@ -9,6 +9,7 @@ import Events from "./components/Events"
 import JoinUs from "./components/JoinUs"
 import ContactUs from "./components/ContactUs"
 import { motion, AnimatePresence } from "motion/react"
+import ContactFooter from './components/ContactFooter';
 
 // import AboutPage from "./components/AboutUs"
 
@@ -102,6 +103,9 @@ const App = () => {
           {renderContent()}
         </motion.div>
       </AnimatePresence>
+
+      {/* FOOTER YAHAN LAGEGA: Page content ke theek baad */}
+      
 
       <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] px-2">
         <AnimatedNavbar activeTab={activeTab} onChange={setActiveTab} />
