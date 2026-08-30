@@ -290,11 +290,11 @@ const WelcomeSection = () => {
                   Global Reach Map
                 </h3>
               </div>
-              <div className="relative h-32 md:h-40 lg:h-32 w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center p-2">
+              <div className="relative h-32 md:h-40 lg:h-32 w-full bg-black/40 border border-white/10 rounded-lg overflow-hidden flex items-center justify-center">
                 <img
-                  src="/figma/illustrations/map.png"
+                  src="/global_reach_map.png"
                   alt="Global Map"
-                  className="h-full object-contain opacity-75"
+                  className="w-full h-full object-cover opacity-75"
                 />
                 <div className="absolute top-6 left-1/4 w-2 h-2 bg-red-500 rounded-full animate-ping" />
                 <div className="absolute top-6 left-1/4 w-1.5 h-1.5 bg-red-500 rounded-full" />
