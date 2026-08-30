@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import ParallaxBackground from "./components/ParallaxBackground"
 import MobileParallax from "./components/MobileParallax"
+import WelcomeSection from "./components/WelcomeSection"
+import GlimpsesSection from "./components/GlimpsesSection"
 import AnimatedNavbar from "./components/AnimatedNavbar"
 import AboutUs from "./components/AboutUs"
 import Events from "./components/Events"
@@ -64,15 +66,25 @@ const App = () => {
       case "home":
       default:
         return (
-          <>
-            <div className="hidden md:block">
-              <ParallaxBackground />
-            </div>
+          <div className="w-full min-h-screen relative">
+            {/* Fixed background overlay to unify homepage visual theme */}
+            <div
+              className="fixed inset-0 z-0 pointer-events-none bg-cover bg-center bg-no-repeat"
+              style={{ backgroundImage: "url(/back.jpg)" }}
+            />
+            <div className="relative z-10">
+              <div className="hidden md:block">
+                <ParallaxBackground />
+              </div>
 
-            <div className="block md:hidden">
-              <MobileParallax />
+              <div className="block md:hidden">
+                <MobileParallax />
+              </div>
+
+              <WelcomeSection />
+              <GlimpsesSection />
             </div>
-          </>
+          </div>
         )
     }
   }
