@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-const ParallaxBackground = () => {
+const Hero = () => {
   return (
     <div
       className="relative w-full h-screen overflow-hidden"
@@ -114,46 +114,12 @@ const ParallaxBackground = () => {
 
         {/* middle center layer */}
         <div className="absolute inset-x-0 flex flex-col items-center justify-center gap-3">
+          
+          
           <motion.img
-            src="MATRIX.png"
+            src="join.png"
             alt="matrix"
-            className="w-2xs"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 8,
-              type: "spring",
-              stiffness: 100,
-            }}
-          />
-          <motion.img
-            src="THE.png"
-            alt="the"
-            className="w-[80px]"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 8,
-              type: "spring",
-              stiffness: 100,
-            }}
-          />
-          <motion.img
-            src="MULTIMEDIA.png"
-            alt="matrix"
-            className="w-lg"
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{
-              duration: 8,
-              type: "spring",
-              stiffness: 100,
-            }}
-          />
-          <motion.img
-            src="CLUB.png"
-            alt="matrix"
-            className="w-40"
+            className="w-[50vw] z-10 translate-y-35"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{
@@ -309,4 +275,4 @@ const ParallaxBackground = () => {
   );
 };
 
-export default ParallaxBackground;
+export default Hero;

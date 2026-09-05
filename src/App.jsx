@@ -9,7 +9,7 @@ import Events from "./components/Events"
 import JoinUs from "./components/JoinUs"
 import ContactUs from "./components/ContactUs"
 import { motion, AnimatePresence } from "motion/react"
-import ContactFooter from './components/ContactFooter';
+// import ContactFooter from './components/ContactFooter';
 
 // import AboutPage from "./components/AboutUs"
 
