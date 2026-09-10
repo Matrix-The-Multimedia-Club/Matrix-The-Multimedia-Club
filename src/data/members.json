@@ -1,0 +1,643 @@
+[
+  {
+    "id": "24BAI10094",
+    "name": "Piyush Kumar Singh",
+    "role": "leadership",
+    "roleTitle": "PRESIDENT",
+    "avatar": "/Members/24BAI10094.jpeg",
+    "bio": "Learning gives creativity, creativity leads to thinking, thinking provides knowledge, knowledge makes you great.",
+    "department": "Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/piyush-kumar-singh-b53749313/",
+      "github": "https://github.com/hacktastic-piyush",
+      "instagram": "https://www.instagram.com/signature.piyush_?igsi=ZnY1dWVldzA5MzVs"
+    }
+  },
+  {
+    "id": "24MIP10048",
+    "name": "Bhumika Verma",
+    "role": "leadership",
+    "roleTitle": "VICE PRESIDENT",
+    "avatar": "/Members/24MIP10048.jpg",
+    "bio": "Let resilience become a quiet kind of power.",
+    "department": "Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/bhumikaverma245",
+      "instagram": "https://www.instagram.com/04_bhumika?igsi=OGI4dmV1MHQ4N3V4"
+    }
+  },
+  {
+    "id": "24BAI10673",
+    "name": "Abhishek Mishra",
+    "role": "leadership",
+    "roleTitle": "GENERAL SECRETARY",
+    "avatar": "/Members/24BAI10673.jpg",
+    "bio": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+    "department": "Management",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/abhishek-mishra-74745a324",
+      "github": "https://github.com/Abhishek-009-Mishra",
+      "instagram": "https://www.instagram.com/abhishek_mishra_267/"
+    }
+  },
+  {
+    "id": "24MIP10041",
+    "name": "Aryan Mishra",
+    "role": "leadership",
+    "roleTitle": "JOINT SECRETARY",
+    "avatar": "/Members/24MIP10041.png",
+    "bio": "Making sure the 'Backend' doesn't crash in real life.",
+    "department": "Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/aryan-mishra62/",
+      "github": "https://github.com/aryanbtd36",
+      "instagram": "https://www.instagram.com/aryan_mishra62/"
+    }
+  },
+  {
+    "id": "25BAI11401",
+    "name": "Vaishnavi Sagar Jadhav",
+    "role": "technical",
+    "roleTitle": "TECHNICAL LEAD",
+    "avatar": "/Members/25BAI11401.jpg",
+    "bio": "Turning ideas into technology and technology into impact.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/vaishnavi-jadhav-b6b147376",
+      "github": "https://github.com/vaishnavisagarjadhav"
+    }
+  },
+  {
+    "id": "25BAI11234",
+    "name": "Rakshit Raj",
+    "role": "technical",
+    "roleTitle": "TECHNICAL CO-LEAD",
+    "avatar": "/Members/25BAI11234.jpg",
+    "bio": "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rakshitrajvit",
+      "github": "https://github.com/RakshitRajVIT",
+      "instagram": "https://www.instagram.com/rakshitraj._"
+    }
+  },
+  {
+    "id": "25BCE10956",
+    "name": "Abhimanyu Singh",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCE10956.jpeg",
+    "bio": "Do not fear failure, be terrified of regret.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/abhimanyu-singh-699187364/",
+      "github": "https://github.com/AbhimanyuSingh-beep/"
+    }
+  },
+  {
+    "id": "25BCE11273",
+    "name": "Abhishek Kumar Singh",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCE11273.jpg",
+    "bio": "Figuring it out, somehow.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/abhishek-kumar-singh-67667825a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "github": "https://github.com/ABHISHEKKUMARSINGH-dev",
+      "instagram": "https://www.instagram.com/abhishek._.ingh?igsi=MTd6bzU3bG1haGNjcA=="
+    }
+  },
+  {
+    "id": "24BCE10109",
+    "name": "Siddhant Kothiya",
+    "role": "technical",
+    "roleTitle": "TECHNICAL MEMBER",
+    "avatar": "/Members/24BCE10109.png",
+    "bio": "Never too old to try.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/siddhant-kothiya-873413322"
+    }
+  },
+  {
+    "id": "25BA10708",
+    "name": "Aditya Raj",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BA10708.png",
+    "bio": "To silly goose or to not silly goose.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/aditya-raj-79a53b314"
+    }
+  },
+  {
+    "id": "24MIM10228",
+    "name": "Deepak Singh",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24MIM10228.jpeg",
+    "bio": "",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/deepak-singh-3b3344361/",
+      "github": "https://github.com/DS0044",
+      "instagram": "https://www.instagram.com/d_raajput_01?igsi=eXU2d2kwdm1kbTVj"
+    }
+  },
+  {
+    "id": "24MIP10039",
+    "name": "Abhinav Gomra",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24MIP10039.jpeg",
+    "bio": "Kar lenge, dekha jayega.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/abhinav-gomra/",
+      "github": "https://github.com/abhinavgomra",
+      "instagram": "https://www.instagram.com/abhinav.gomra/"
+    }
+  },
+  {
+    "id": "25BAI11403",
+    "name": "Aman Nawaz",
+    "role": "technical",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI11403.jpg",
+    "bio": "Progress happens one step at a time.",
+    "department": "Technical",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/aman-nawaz-221b183ab?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "github": "https://github.com/01sweven-bot",
+      "instagram": "https://www.instagram.com/01amannawaz213?igsi=MTM0bHVub2tvaGEwNQ=="
+    }
+  },
+  {
+    "id": "24BAI10805",
+    "name": "Anushka",
+    "role": "designer",
+    "roleTitle": "DESIGN LEAD",
+    "avatar": "/Members/24BAI10805.png",
+    "bio": "Making it make sense.",
+    "department": "Design",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/anushka-anushka-09a694357?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "github": "https://github.com/anushkaa-star",
+      "instagram": "https://www.instagram.com/_.anuushka__/"
+    }
+  },
+  {
+    "id": "24BAI10975",
+    "name": "Rupankita Baruah",
+    "role": "designer",
+    "roleTitle": "DESIGN CO-LEAD",
+    "avatar": "/Members/24BAI10975.jpg",
+    "bio": "Made different.",
+    "department": "Design",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rupankita-baruah-b59678324"
+    }
+  },
+  {
+    "id": "24BAI10870",
+    "name": "Diya Gugale",
+    "role": "designer",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24BAI10870.jpg",
+    "bio": "",
+    "department": "Design",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/diya-gugale-2877b1275",
+      "github": "https://github.com/diyagugale2006-git"
+    }
+  },
+  {
+    "id": "25BCY10096",
+    "name": "Sneha Bakre",
+    "role": "designer",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCY10096.jpg",
+    "bio": "Turning thoughts into pretty things 🌷",
+    "department": "Design",
+    "socials": {
+      "instagram": "https://www.instagram.com/snehabakre7?igsi=eTg1d240anU2ejc5"
+    }
+  },
+  {
+    "id": "25MIP10157",
+    "name": "Sneha Mehta",
+    "role": "designer",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25MIP10157.jpg",
+    "bio": "Graceful but never giving up.",
+    "department": "Design",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/sneha-mehta-25mip10157",
+      "github": "https://github.com/sneha25mip10157"
+    }
+  },
+  {
+    "id": "25BAI10841",
+    "name": "Divyanshi Gupta",
+    "role": "social_media",
+    "roleTitle": "SOCIAL MEDIA LEAD",
+    "avatar": "/Members/25BAI10841.jpeg",
+    "bio": "",
+    "department": "Social Media",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/divyanshi-gupta-989245359?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BAI11384",
+    "name": "Shrenika Rajpoot",
+    "role": "social_media",
+    "roleTitle": "SOCIAL MEDIA CO-LEAD",
+    "avatar": "/Members/25BAI11384.png",
+    "bio": "",
+    "department": "Social Media",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/shrenika-rajpoot"
+    }
+  },
+  {
+    "id": "25BAI10058",
+    "name": "Deepti Singh",
+    "role": "social_media",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI10058.jpg",
+    "bio": "",
+    "department": "Social Media",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/deepti-singh-8b60bb385?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BAI11543",
+    "name": "Manushri Gupta",
+    "role": "social_media",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI11543.jpg",
+    "bio": "",
+    "department": "Social Media",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/manushri-gupta-0b5600381?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "24MIP10086",
+    "name": "Anish Agrawal",
+    "role": "social_media",
+    "roleTitle": "MEMBER",
+    "avatar": "/Members/24MIP10086.jpg",
+    "bio": "Creating stories that connect, inspire, and leave an impact.",
+    "department": "Social Media",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/anish-a-0a8001306?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/_anish.17_?igsi=MWY0ODRrN3E2Y3VmbA=="
+    }
+  },
+  {
+    "id": "25BCE10221",
+    "name": "Priya Ranjan",
+    "role": "social_media",
+    "roleTitle": "PHOTOGRAPHY CORE MEMBER",
+    "avatar": "/Members/25BCE10221.jpg",
+    "bio": "",
+    "department": "Photography",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/priya-ranjan-295b45375?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BAI11460",
+    "name": "Saumya Dixit",
+    "role": "social_media",
+    "roleTitle": "PHOTOGRAPHY CORE MEMBER",
+    "avatar": "/Members/25BAI11460.jpg",
+    "bio": "",
+    "department": "Photography",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/saumya-dixit-7238a2381?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "24BSA10306",
+    "name": "Shivang Saini",
+    "role": "event_management",
+    "roleTitle": "EVENT LEAD",
+    "avatar": "/Members/24BSA10306.jpg",
+    "bio": "No matter how many fish in the sea, it would be so empty without me.",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/shivang-saini-455681328",
+      "instagram": "https://www.instagram.com/shivangsaini17/"
+    }
+  },
+  {
+    "id": "25BAI11409",
+    "name": "Kashish Raj",
+    "role": "event_management",
+    "roleTitle": "EVENT CO-LEAD",
+    "avatar": "/Members/25BAI11409.jpg",
+    "bio": "Growing through every experience.",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/kashish-raj-70940b379?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BCE10842",
+    "name": "Astha Singh",
+    "role": "event_management",
+    "roleTitle": "MEMBER",
+    "avatar": "/Members/25BCE10842.jpg",
+    "bio": "",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/astha-singh-353124426?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BCE11329",
+    "name": "Krishna Nishad",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCE11329.jpg",
+    "bio": "",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/krishna-nishad-0a8734388",
+      "github": "https://github.com/nishadkrishna012"
+    }
+  },
+  {
+    "id": "25BAI10347",
+    "name": "Shraddha Gupta",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI10347.jpg",
+    "bio": "Making chaos productive.",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://in.linkedin.com/in/shraddha-gupta-51006b3b0",
+      "instagram": "https://www.instagram.com/its.shraddhaaa_/"
+    }
+  },
+  {
+    "id": "25BAC10022",
+    "name": "Krishna Arora",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAC10022.jpg",
+    "bio": "",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/krishna-arora-b9286837b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "github": "https://github.com/krishna25bac10022",
+      "instagram": "https://www.instagram.com/krixna_10?igsi=MThob3hhYjBxOXFocA=="
+    }
+  },
+  {
+    "id": "24MEI10122",
+    "name": "Riyaz Mohmmad",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24MEI10122.png",
+    "bio": "",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/riyaz-mohmmad-aa66b4328",
+      "github": "https://github.com/riyazmohmmad",
+      "instagram": "https://www.instagram.com/riaazkhn?igsi=MWp6ZHNteWZ4cXVkaA=="
+    }
+  },
+  {
+    "id": "24BCE10209",
+    "name": "Kriti Sinha",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24BCE10209.jpeg",
+    "bio": "Creating moments, connecting people, and making things happen.",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/kriti-sinha-328774217",
+      "github": "https://github.com/kritisinha20260",
+      "instagram": "https://www.instagram.com/_kriti.sinha_/"
+    }
+  },
+  {
+    "id": "24BAI10729",
+    "name": "Ambuj Singh",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24BAI10729.png",
+    "bio": "Leave No Man Behind",
+    "department": "Event Management",
+    "socials": {}
+  },
+  {
+    "id": "25BAI11020",
+    "name": "Aryan Srivastava",
+    "role": "event_management",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI11020.jpg",
+    "bio": "",
+    "department": "Event Management",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/aryan-srivastava-509a933ba/"
+    }
+  },
+  {
+    "id": "25bcy10074",
+    "name": "Sidharth Basu",
+    "role": "pr_outreach",
+    "roleTitle": "PR & OUTREACH LEAD",
+    "avatar": "/Members/25bcy10074.jpeg",
+    "bio": "The supreme quality for leadership is its unquestionable integrity, without it no real success is possible.",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/sidharth-basu-26816b382/",
+      "github": "https://github.com/sidharth25bcy10074-beep",
+      "instagram": "https://www.instagram.com/_sid_0007/"
+    }
+  },
+  {
+    "id": "25BAI10810",
+    "name": "Harsh Yadav",
+    "role": "pr_outreach",
+    "roleTitle": "PR CO-LEAD",
+    "avatar": "/Members/25BAI10810.png",
+    "bio": "",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/harsh-yadav-51919337a?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BAI10565",
+    "name": "Harsh Gabrani",
+    "role": "pr_outreach",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI10565.jpg",
+    "bio": "Positive vibes only.",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/harsh-gabrani-a289ba327?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/harsh.gabru?igsi=MW4xeTZhanY3a3hvdA=="
+    }
+  },
+  {
+    "id": "25BAI10729",
+    "name": "Chitransh Goyal",
+    "role": "pr_outreach",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI10729.jpg",
+    "bio": "Think Like 'Proton', Always Positive.",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/chitransh-goyal-11014837a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "github": "http://github.com/chitransh389",
+      "instagram": "https://www.instagram.com/chitransh_389?igsi=ZXRwdWFtb3RreDdh"
+    }
+  },
+  {
+    "id": "25BCE10538",
+    "name": "Mohammad Zaid Anees",
+    "role": "pr_outreach",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCE10538.jpeg",
+    "bio": "True wisdom comes to each of us when we realize how little we understand about life, ourselves, and the world around us.",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/mohammad-zaid-anees-05a556398",
+      "github": "https://github.com/mohammad25bce10538",
+      "instagram": "https://www.instagram.com/mohammadzaidanees/"
+    }
+  },
+  {
+    "id": "25BAI11569",
+    "name": "Akshat Mishra",
+    "role": "pr_outreach",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI11569.jpg",
+    "bio": "Keep moving forward.",
+    "department": "PR & Outreach",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/akshat-mishra-015690384?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "24MEI10091",
+    "name": "Ayush Upadhyay",
+    "role": "finance",
+    "roleTitle": "FINANCE LEAD",
+    "avatar": "/Members/24MEI10091.png",
+    "bio": "Where others see numbers, we see possibilities.",
+    "department": "Finance",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/ayush-upadhyay-bb3192327",
+      "instagram": "https://www.instagram.com/gautam_.276ayush?igsi=MXU0NHVvbHh0dXlxYw=="
+    }
+  },
+  {
+    "id": "25BCE11428",
+    "name": "K Kashyap",
+    "role": "finance",
+    "roleTitle": "FINANCE CO-LEAD",
+    "avatar": "/Members/25BCE11428.jpg",
+    "bio": "Surviving with numbers....",
+    "department": "Finance",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/koyilada-kashyap-862509382/",
+      "instagram": "https://www.instagram.com/kashyapkoyilada?igsi=MXF4NGk5eDhoczN2Zg=="
+    }
+  },
+  {
+    "id": "24BAI10420",
+    "name": "Anika Saxena",
+    "role": "finance",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/24BAI10420.jpg",
+    "bio": "Follow your dreams, believe in yourself and don't give up.",
+    "department": "Finance",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/anika-saxena-737bb63377?utm_source=share_via&utm_content=profile&m_medium=member_android"
+    }
+  },
+  {
+    "id": "25BCG10038",
+    "name": "Gaurav Kumar Singh",
+    "role": "finance",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BCG10038.jpg",
+    "bio": "",
+    "department": "Finance",
+    "socials": {}
+  },
+  {
+    "id": "24BHI10024",
+    "name": "Aditi Sinha",
+    "role": "content_writer",
+    "roleTitle": "CONTENT LEAD",
+    "avatar": "/Members/24BHI10024.jpg",
+    "bio": "",
+    "department": "Content",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/aditi-sinha-399632341"
+    }
+  },
+  {
+    "id": "25BCE10851",
+    "name": "Nasya Thakur",
+    "role": "content_writer",
+    "roleTitle": "CONTENT WRITER",
+    "avatar": "/Members/25BCE10851.heif",
+    "bio": "When nothing goes right, write.",
+    "department": "Content",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/nasya-thakur"
+    }
+  },
+  {
+    "id": "25BAI11073",
+    "name": "Rishabh Rai",
+    "role": "content_writer",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI11073.jpg",
+    "bio": "",
+    "department": "Content",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/rishabh-rai-9b1561385?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }
+  },
+  {
+    "id": "25BAI10312",
+    "name": "Saurjyesh Mekap",
+    "role": "content_writer",
+    "roleTitle": "CORE MEMBER",
+    "avatar": "/Members/25BAI10312.jpeg",
+    "bio": "Mastering the mechanics of attention through structure, storytelling, and systems.",
+    "department": "Content",
+    "socials": {
+      "linkedin": "https://www.linkedin.com/in/saurjyeshmekap/",
+      "github": "https://github.com/saurjyeshmekap-sys",
+      "instagram": "https://www.instagram.com/thesaurjyeshmekap/?hl=en"
+    }
+  },
+  {
+    "id": "24BAS10074",
+    "name": "Hridyesha Peddinti",
+    "role": "researcher",
+    "roleTitle": "RESEARCH & PROJECT LEAD",
+    "avatar": "/Members/24BAS10074.jpeg",
+    "bio": "Ideas become impact when curiosity meets execution.",
+    "department": "Research & Project",
+    "socials": {
+      "linkedin": "http://www.linkedin.com/in/hridyesha-p-l-672965324",
+      "instagram": "https://www.instagram.com/hridyesha_04?utm_source=qr&igsi=MTdyNWI5ZG9zMTM="
+    }
+  }
+]

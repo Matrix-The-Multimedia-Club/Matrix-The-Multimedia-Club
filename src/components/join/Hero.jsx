@@ -114,12 +114,46 @@ const Hero = () => {
 
         {/* middle center layer */}
         <div className="absolute inset-x-0 flex flex-col items-center justify-center gap-3">
-          
-          
           <motion.img
             src="join.png"
             alt="matrix"
-            className="w-[50vw] z-10 translate-y-35"
+            className="w-[14rem]"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 8,
+              type: "spring",
+              stiffness: 100,
+            }}
+          />
+          <motion.img
+            src="THE.png"
+            alt="the"
+            className="w-[80px]"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 8,
+              type: "spring",
+              stiffness: 100,
+            }}
+          />
+          <motion.img
+            src="MATRIX.png"
+            alt="matrix"
+            className="w-[20rem]"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{
+              duration: 8,
+              type: "spring",
+              stiffness: 100,
+            }}
+          />
+          <motion.img
+            src="CLUB.png"
+            alt="matrix"
+            className="w-40"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{

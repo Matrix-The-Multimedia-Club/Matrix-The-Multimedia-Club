@@ -111,7 +111,7 @@ const MobileHero = () => {
         {/* middle center layer  iska mobile responsive  ho gya hai*/}
         <div className="absolute inset-x-0 flex flex-col items-center h-[75vh] justify-center gap-2">
           <motion.img
-            src="MATRIX.png"
+            src="join.png"
             alt="matrix"
             className=" max-w-[150px] min-w-[100px]"
             initial={{ scale: 0, opacity: 0 }}
@@ -127,9 +127,9 @@ const MobileHero = () => {
             transition={{ duration: 8, type: "spring", stiffness: 100 }}
           />
           <motion.img
-            src="MULTIMEDIA.png"
+            src="MATRIX.png"
             alt="matrix"
-            className="max-w-[300px] min-w-[180px]"
+            className="max-w-[250px] min-w-[140px]"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 8, type: "spring", stiffness: 100 }}
