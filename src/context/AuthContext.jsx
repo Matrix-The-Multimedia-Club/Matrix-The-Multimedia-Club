@@ -16,7 +16,7 @@ import {
 
 const AuthContext = createContext();
 
-const DEFAULT_COLLEGE_DOMAIN = import.meta.env.VITE_COLLEGE_EMAIL_DOMAIN || "vitbhopal.ac.in";
+const DEFAULT_COLLEGE_DOMAIN = import.meta.env.VITE_COLLEGE_EMAIL_DOMAIN || "";
 const DEFAULT_GOOGLE_FORM_URL = import.meta.env.VITE_GOOGLE_FORM_URL || "";
 const IMAGEKIT_BASE = "https://ik.imagekit.io/Rakshitrajvit/Members";
 
