@@ -146,12 +146,13 @@ const ContactUs = () => {
       type: "",
     });
 
+    const inquiry = {
+      ...formData,
+      createdAt: new Date().toISOString(),
+      read: false,
+    };
+
     try {
-      const inquiry = {
-        ...formData,
-        createdAt: new Date().toISOString(),
-        read: false,
-      };
 
       if (isFirebaseDemoConfig()) {
         const saved = JSON.parse(localStorage.getItem("matrix_inquiries") || "[]");
@@ -174,10 +175,10 @@ const ContactUs = () => {
       });
     } catch (error) {
       console.error("Could not submit inquiry:", error);
-      setStatus({
-        message: "Could not send your message. Please try again.",
-        type: "error",
-      });
+      const message = error?.code === "PERMISSION_DENIED"
+        ? "Firebase denied the submission. Publish the updated database rules and try again."
+        : "Could not send your message. Please check your connection and try again.";
+      setStatus({ message, type: "error" });
     } finally {
       setIsLoading(false);
       setTimeout(() => {

@@ -19,6 +19,12 @@
     "settings": {
       ".read": true,
       ".write": "auth != null && root.child('roles').child(auth.uid).val() === 'admin'"
+    },
+    "inquiries": {
+      ".read": "auth != null && root.child('roles').child(auth.uid).val() === 'admin'",
+      "$inquiryId": {
+        ".write": "!data.exists() || (auth != null && root.child('roles').child(auth.uid).val() === 'admin')"
+      }
     }
   }
 }

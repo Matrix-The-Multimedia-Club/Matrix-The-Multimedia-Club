@@ -41,6 +41,7 @@ export const EventManagement = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [showFormModal, setShowFormModal] = useState(false);
   const [editingEvent, setEditingEvent] = useState(null);
+  const [imageUploading, setImageUploading] = useState(false);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -106,6 +107,100 @@ export const EventManagement = () => {
       description: evt.description || ""
     });
     setShowFormModal(true);
+  };
+
+  const handleEventImageUpload = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+      alert("Please select an image file.");
+      e.target.value = "";
+      return;
+    }
+
+    if (file.size > 10 * 1024 * 1024) {
+      alert("Event image must be 10MB or smaller.");
+      e.target.value = "";
+      return;
+    }
+
+    setImageUploading(true);
+    try {
+      const baseName = (formData.title || editingEvent?.title || `event-${Date.now()}`)
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "") || `event-${Date.now()}`;
+      const extension = file.name.split(".").pop()?.toLowerCase() || "jpg";
+      const fileName = `${baseName}.${extension}`;
+
+      const reader = new FileReader();
+      const fileData = await new Promise((resolve, reject) => {
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+
+      let uploadedUrl = "";
+      const privateKey = import.meta.env.VITE_IMAGEKIT_PRIVATE_KEY;
+      const publicKey = import.meta.env.VITE_IMAGEKIT_PUBLIC_KEY;
+      const authEndpoint = import.meta.env.VITE_IMAGEKIT_AUTH_ENDPOINT;
+
+      if (privateKey) {
+        const uploadData = new FormData();
+        uploadData.append("file", fileData);
+        uploadData.append("fileName", fileName);
+        uploadData.append("useUniqueFileName", "false");
+        uploadData.append("folder", "/Events");
+        uploadData.append("overwriteFile", "true");
+
+        const response = await fetch("https://upload.imagekit.io/api/v1/files/upload", {
+          method: "POST",
+          headers: { Authorization: `Basic ${btoa(privateKey + ":")}` },
+          body: uploadData
+        });
+
+        if (!response.ok) {
+          throw new Error((await response.text()) || "ImageKit upload failed.");
+        }
+        const result = await response.json();
+        uploadedUrl = result.url;
+      } else if (publicKey && authEndpoint) {
+        const authResponse = await fetch(authEndpoint);
+        if (!authResponse.ok) throw new Error("Could not get ImageKit upload authorization.");
+        const auth = await authResponse.json();
+
+        const uploadData = new FormData();
+        uploadData.append("file", fileData);
+        uploadData.append("fileName", fileName);
+        uploadData.append("useUniqueFileName", "false");
+        uploadData.append("folder", "/Events");
+        uploadData.append("publicKey", publicKey);
+        uploadData.append("signature", auth.signature);
+        uploadData.append("expire", auth.expire);
+        uploadData.append("token", auth.token);
+
+        const response = await fetch("https://upload.imagekit.io/api/v1/files/upload", {
+          method: "POST",
+          body: uploadData
+        });
+        if (!response.ok) throw new Error("ImageKit upload failed.");
+        const result = await response.json();
+        uploadedUrl = result.url;
+      } else {
+        throw new Error("Configure VITE_IMAGEKIT_PRIVATE_KEY or ImageKit public/auth variables.");
+      }
+
+      setFormData((current) => ({
+        ...current,
+        image: uploadedUrl || `https://ik.imagekit.io/Rakshitrajvit/Events/${fileName}`
+      }));
+    } catch (err) {
+      alert(`Image upload failed: ${err.message}`);
+    } finally {
+      setImageUploading(false);
+      e.target.value = "";
+    }
   };
 
   const handleFormSubmit = async (e) => {
@@ -325,16 +420,26 @@ export const EventManagement = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-gray-300 mb-1 font-semibold">Image Banner URL</label>
+                  <label className="block text-gray-300 mb-1 font-semibold">Event Picture</label>
                   <input
-                    type="text"
-                    placeholder="/event-airm.png or image URL"
-                    value={formData.image}
-                    onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl bg-black/60 border border-neutral-700 text-white focus:outline-none focus:border-purple-500"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleEventImageUpload}
+                    disabled={imageUploading}
+                    className="w-full text-xs text-gray-300 file:mr-3 file:px-3 file:py-2 file:rounded-lg file:border-0 file:bg-purple-600 file:text-white file:font-bold hover:file:bg-purple-500 disabled:opacity-50"
                   />
+                  <p className="text-[10px] text-gray-500 mt-1">
+                    {imageUploading ? "Uploading to ImageKit /Events..." : "Uploads to ImageKit folder: Events"}
+                  </p>
+                  {formData.image && (
+                    <img
+                      src={formData.image}
+                      alt="Event preview"
+                      className="mt-2 w-full h-28 object-cover rounded-xl border border-neutral-700"
+                    />
+                  )}
                 </div>
 
                 <div>
@@ -370,7 +475,8 @@ export const EventManagement = () => {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold shadow-md shadow-purple-900/30"
+                  disabled={imageUploading}
+                  className="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold shadow-md shadow-purple-900/30 disabled:opacity-50"
                 >
                   Save Event
                 </button>
