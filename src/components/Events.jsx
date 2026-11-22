@@ -20,10 +20,9 @@ const Events = () => {
       />
       <section className="relative z-10 w-full py-16 px-6 md:px-16 overflow-hidden flex-grow">
         {/* Background Accents */}
-        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none"  />
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] rounded-full blur-[140px] pointer-events-none" />
 
         <div className="max-w-6xl mx-auto flex flex-col gap-12 relative z-10">
-
           {/* Page Title */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -73,10 +72,9 @@ const Events = () => {
               transition={{ duration: 0.25 }}
               className="min-h-[400px]"
             >
-              {activeTab === "archive" && <EventArchive />}
+              <EventArchive category={activeTab} />
             </motion.div>
           </AnimatePresence>
-
         </div>
       </section>
     </div>

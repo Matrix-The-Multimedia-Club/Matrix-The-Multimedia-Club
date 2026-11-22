@@ -1,0 +1,24 @@
+{
+  "rules": {
+    "members": {
+      ".read": true,
+      "$memberId": {
+        ".write": "auth != null && (root.child('roles').child(auth.uid).val() === 'admin' || root.child('roles').child(auth.uid).val() === 'team_member' || auth.email === data.child('email').val() || !data.exists())"
+      }
+    },
+    "events": {
+      ".read": true,
+      ".write": "auth != null && (root.child('roles').child(auth.uid).val() === 'admin' || root.child('roles').child(auth.uid).val() === 'team_member')"
+    },
+    "roles": {
+      ".read": "auth != null",
+      "$uid": {
+        ".write": "auth != null && (root.child('roles').child(auth.uid).val() === 'admin' || !data.exists())"
+      }
+    },
+    "settings": {
+      ".read": true,
+      ".write": "auth != null && root.child('roles').child(auth.uid).val() === 'admin'"
+    }
+  }
+}

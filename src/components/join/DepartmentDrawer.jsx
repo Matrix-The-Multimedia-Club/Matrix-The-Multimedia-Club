@@ -24,8 +24,11 @@ export const DepartmentDrawer = ({
   isOpen,
   onClose,
   onApplyRole,
+  registrationOpen = true,
 }) => {
   if (!isOpen || !department) return null;
+
+  const applicationsEnabled = registrationOpen === true;
 
   const renderBadge = () => {
     switch (department.id) {
@@ -145,6 +148,7 @@ export const DepartmentDrawer = ({
                 {department.description}
               </p>
 
+              {applicationsEnabled && (
               <div className="pt-2">
                 <button
                   onClick={() => {
@@ -158,6 +162,7 @@ export const DepartmentDrawer = ({
                   <ExternalLink className="w-4 h-4 ml-1" />
                 </button>
               </div>
+              )}
             </div>
           </div>
 
@@ -210,6 +215,7 @@ export const DepartmentDrawer = ({
             The Matrix Multimedia Club • Join Us
           </div>
 
+          {applicationsEnabled && (
           <button
             onClick={() => {
               playPop(520);
@@ -220,6 +226,7 @@ export const DepartmentDrawer = ({
             <span>Apply Now</span>
             <ExternalLink className="w-3.5 h-3.5" />
           </button>
+          )}
         </div>
       </div>
     </div>

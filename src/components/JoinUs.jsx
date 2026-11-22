@@ -17,9 +17,7 @@ import {
 
 import { DepartmentDrawer } from "./join/DepartmentDrawer";
 import { playPop } from "../utils/audio";
-
-// Google Form URL for Join Us applications
-const GOOGLE_FORM_URL = "https://forms.google.com";
+import { useAuth } from "../context/AuthContext";
 
 const SECTIONS = [
   {
@@ -52,6 +50,7 @@ const SECTIONS = [
 ];
 
 export default function JoinUs() {
+  const { registrationOpen, googleFormUrl } = useAuth();
   const [selectedDeptId, setSelectedDeptId] = useState(null);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -62,8 +61,13 @@ export default function JoinUs() {
   };
 
   const handleApplyRedirect = () => {
+    if (!registrationOpen) return;
     playPop(650);
-    window.open(GOOGLE_FORM_URL, "_blank", "noopener,noreferrer");
+    if (!googleFormUrl) {
+      alert("Registration is open, but no Google Form URL has been configured yet.");
+      return;
+    }
+    window.open(googleFormUrl, "_blank", "noopener,noreferrer");
   };
 
   const selectedDepartment = DEPARTMENTS.find(
@@ -215,6 +219,7 @@ export default function JoinUs() {
         </section>
 
         {/* DIRECT GOOGLE FORM CTA BANNER */}
+        {registrationOpen && (
         <section className="max-w-4xl mx-auto text-center my-16 px-4 sm:px-6 lg:px-8 pb-16">
           <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-amber-500/20 via-neutral-900/90 to-neutral-900/90 border border-amber-500/30 shadow-2xl space-y-6 backdrop-blur-md">
             <h2 className="text-3xl sm:text-4xl font-black text-white uppercase">
@@ -235,12 +240,14 @@ export default function JoinUs() {
             </div>
           </div>
         </section>
+        )}
       </div>
 
       {/* DEPARTMENT DRAWER MODAL */}
       <DepartmentDrawer
         department={selectedDepartment}
         isOpen={isDrawerOpen}
+        registrationOpen={registrationOpen}
         onClose={() => setIsDrawerOpen(false)}
         onApplyRole={() => {
           setIsDrawerOpen(false);

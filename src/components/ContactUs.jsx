@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { db, ref, push, isFirebaseDemoConfig } from "../firebase";
 import Hero from "./contact/Hero";
 import MobileHero from "./contact/MobileHero";
 import {
@@ -112,7 +113,7 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let isValid = true;
@@ -145,8 +146,20 @@ const ContactUs = () => {
       type: "",
     });
 
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const inquiry = {
+        ...formData,
+        createdAt: new Date().toISOString(),
+        read: false,
+      };
+
+      if (isFirebaseDemoConfig()) {
+        const saved = JSON.parse(localStorage.getItem("matrix_inquiries") || "[]");
+        saved.unshift({ id: `inquiry_${Date.now()}`, ...inquiry });
+        localStorage.setItem("matrix_inquiries", JSON.stringify(saved));
+      } else {
+        await push(ref(db, "inquiries"), inquiry);
+      }
 
       setStatus({
         message: "Message sent successfully — we'll get back to you soon!",
@@ -159,14 +172,18 @@ const ContactUs = () => {
         subject: "",
         message: "",
       });
-
+    } catch (error) {
+      console.error("Could not submit inquiry:", error);
+      setStatus({
+        message: "Could not send your message. Please try again.",
+        type: "error",
+      });
+    } finally {
+      setIsLoading(false);
       setTimeout(() => {
-        setStatus({
-          message: "",
-          type: "",
-        });
+        setStatus({ message: "", type: "" });
       }, 4000);
-    }, 1200);
+    }
   };
 
   return (

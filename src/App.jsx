@@ -8,37 +8,53 @@ import AboutUs from "./components/AboutUs"
 import Events from "./components/Events"
 import JoinUs from "./components/JoinUs"
 import ContactUs from "./components/ContactUs"
+import AdminPortalModal from "./components/admin/AdminPortalModal"
+import AdminPage from "./components/admin/AdminPage"
+// import { useAuth } from "./context/AuthContext"
 import { motion, AnimatePresence } from "motion/react"
-// import ContactFooter from './components/ContactFooter';
-
-// import AboutPage from "./components/AboutUs"
 
 const App = () => {
   const isAboutPath = window.location.pathname === "/about"
+  const isAdminPath = window.location.pathname === "/admin"
+  // const { user, userRole, userMemberData } = useAuth()
+  const [isPortalOpen, setIsPortalOpen] = useState(false)
 
   const [activeTab, setActiveTab] = useState(() => {
-    if (isAboutPath) {
-      return "about"
-    }
+    if (isAdminPath) return "admin"
+    if (isAboutPath) return "about"
     const hash = window.location.hash.replace("#", "")
-    return ["home", "about", "events", "join", "contact"].includes(hash) ? hash : "home"
+    return ["home", "about", "events", "join", "contact", "admin"].includes(hash) ? hash : "home"
   })
 
-  // Sync state to hash if we are on the home page (pathname is NOT /about)
-  useEffect(() => {
-    if (isAboutPath) {
-      if (activeTab !== "about") {
-        // User clicked a different tab from /about, redirect to home with hash
-        window.location.href = `/#${activeTab}`
+  // Handle Tab Navigation cleanly from any route
+  const handleTabChange = (tabId) => {
+    if (tabId === "about") {
+      if (window.location.pathname !== "/about") {
+        window.location.href = "/about"
+      } else {
+        setActiveTab("about")
       }
+      return
+    }
+
+    if (tabId === "admin") {
+      window.location.href = "/admin"
+      return
+    }
+
+    // For home, events, join, contact
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${tabId}`
     } else {
-      window.location.hash = activeTab
+      setActiveTab(tabId)
+      window.location.hash = tabId
       window.scrollTo({ top: 0, behavior: "smooth" })
     }
-  }, [activeTab, isAboutPath])
+  }
 
+  // Listen for Hash Changes on homepage
   useEffect(() => {
-    if (isAboutPath) return
+    if (isAboutPath || isAdminPath) return
 
     const handleHashChange = () => {
       const hash = window.location.hash.replace("#", "")
@@ -48,7 +64,11 @@ const App = () => {
     }
     window.addEventListener("hashchange", handleHashChange)
     return () => window.removeEventListener("hashchange", handleHashChange)
-  }, [isAboutPath])
+  }, [isAboutPath, isAdminPath])
+
+  if (isAdminPath) {
+    return <AdminPage />
+  }
 
   const renderContent = () => {
     if (isAboutPath) {
@@ -92,6 +112,8 @@ const App = () => {
 
   return (
     <div className="relative w-screen min-h-screen bg-black text-white overflow-x-hidden">
+      {/* Top Right Floating Portal / Admin Page Link */}
+
       <AnimatePresence mode="wait">
         <motion.div
           key={isAboutPath ? "about-path" : activeTab}
@@ -104,12 +126,18 @@ const App = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* FOOTER YAHAN LAGEGA: Page content ke theek baad */}
-      
-
-      <div className="fixed bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] px-2">
-        <AnimatedNavbar activeTab={activeTab} onChange={setActiveTab} />
+      <div className="fixed top-4 sm:top-6 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] px-2">
+        <AnimatedNavbar
+          activeTab={activeTab}
+          onChange={handleTabChange}
+          onOpenPortal={() => {
+            window.location.href = "/admin"
+          }}
+        />
       </div>
+
+      {/* Admin & Member Access Portal Modal */}
+      <AdminPortalModal isOpen={isPortalOpen} onClose={() => setIsPortalOpen(false)} />
     </div>
   )
 }

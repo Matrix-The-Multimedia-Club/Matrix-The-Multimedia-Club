@@ -1,6 +1,64 @@
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
-import membersData from "../../data/members.json";
 import { MemberCard } from "../compsss/MemberCard";
+import { db, ref, onValue, isFirebaseDemoConfig } from "../../firebase";
+
+const IMAGEKIT_BASE = "https://ik.imagekit.io/Rakshitrajvit/Members";
+
+const resolveAvatar = (avatar, id) => {
+  if (!avatar) {
+    return id ? `${IMAGEKIT_BASE}/${id}.jpg` : "/figma/avatar.png";
+  }
+  if (avatar.startsWith("http")) return avatar;
+  if (avatar.startsWith("/Members/")) {
+    const file = avatar.replace("/Members/", "");
+    return `${IMAGEKIT_BASE}/${file}`;
+  }
+  return avatar;
+};
+
+const getMemberRank = (member) => {
+  const title = (member.roleTitle || "").toUpperCase().trim();
+  const role = (member.role || "").toLowerCase();
+
+  if (role === "leadership") {
+    if (title.includes("PRESIDENT") && !title.includes("VICE")) return 1;
+    if (title.includes("VICE PRESIDENT")) return 2;
+    if (title.includes("GENERAL SECRETARY")) return 3;
+    if (title.includes("JOINT SECRETARY")) return 4;
+    if (title.includes("LEAD")) return 5;
+    return 6;
+  }
+
+  if (
+    title.includes("HEAD") ||
+    (title.includes("LEAD") &&
+      !title.includes("CO-LEAD") &&
+      !title.includes("CO LEAD") &&
+      !title.includes("ASSOCIATE") &&
+      !title.includes("JOINT"))
+  ) {
+    return 1;
+  }
+
+  if (
+    title.includes("CO-LEAD") ||
+    title.includes("CO LEAD") ||
+    title.includes("ASSOCIATE LEAD") ||
+    title.includes("JOINT LEAD") ||
+    title.includes("DEPUTY") ||
+    title.includes("CO-HEAD") ||
+    title.includes("CO HEAD")
+  ) {
+    return 2;
+  }
+
+  if (title.includes("CORE")) {
+    return 3;
+  }
+
+  return 4;
+};
 
 const SECTIONS = [
   {
@@ -76,6 +134,64 @@ const SECTIONS = [
 ];
 
 export const MeetOurTeam = () => {
+  const [members, setMembers] = useState([]);
+
+  // Subscribe exclusively to Firebase Realtime Database
+  useEffect(() => {
+    if (isFirebaseDemoConfig()) {
+      const saved = localStorage.getItem("mock_members_list");
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        setMembers(parsed.map((m) => ({ ...m, avatar: resolveAvatar(m.avatar, m.id) })));
+      }
+      return;
+    }
+
+    try {
+      const rootRef = ref(db);
+      const unsubscribe = onValue(
+        rootRef,
+        (snapshot) => {
+          if (snapshot.exists()) {
+            const val = snapshot.val();
+            let parsedList = [];
+
+            if (val.members) {
+              if (Array.isArray(val.members)) {
+                parsedList = val.members.filter(Boolean);
+              } else if (typeof val.members === "object") {
+                parsedList = Object.keys(val.members).map((k) => ({ ...val.members[k], key: k }));
+              }
+            } else if (Array.isArray(val)) {
+              parsedList = val.filter(Boolean);
+            } else if (typeof val === "object") {
+              parsedList = Object.keys(val)
+                .filter((k) => k !== "events" && k !== "roles" && k !== "settings")
+                .map((k) => ({ ...val[k], key: k }));
+            }
+
+            if (parsedList.length > 0) {
+              const formatted = parsedList.map((m) => ({
+                ...m,
+                id: m.id || m.key,
+                avatar: resolveAvatar(m.avatar, m.id || m.key),
+                bio: m.bio || m.tagline || ""
+              }));
+              setMembers(formatted);
+            }
+          }
+        },
+        (error) => {
+          console.warn("Firebase Realtime Database read error:", error);
+        }
+      );
+
+      return () => unsubscribe();
+    } catch (err) {
+      console.warn("Failed to subscribe to Firebase Realtime Database members:", err);
+    }
+  }, []);
+
   const scrollToSection = (id) => {
     const el = document.getElementById(`team-section-${id}`);
     if (el) {
@@ -118,7 +234,7 @@ export const MeetOurTeam = () => {
         {/* Quick Navigation Jump Bar */}
         <div className="sticky top-4 z-40 w-full max-w-5xl mb-16">
           <div className="flex flex-wrap items-center justify-center gap-2 p-2 rounded-2xl bg-neutral-900/90 border border-neutral-800 backdrop-blur-md shadow-2xl overflow-x-auto max-w-full scrollbar-none">
-            {SECTIONS.filter((sec) => membersData.some((m) => m.role === sec.id)).map((sec) => (
+            {SECTIONS.filter((sec) => members.some((m) => m.role === sec.id)).map((sec) => (
               <button
                 key={sec.id}
                 onClick={() => scrollToSection(sec.id)}
@@ -132,8 +248,15 @@ export const MeetOurTeam = () => {
 
         {/* Department Sections Stack */}
         <div className="w-full flex flex-col gap-20">
-          {SECTIONS.filter((sec) => membersData.some((m) => m.role === sec.id)).map((sec) => {
-            const teamMembers = membersData.filter((m) => m.role === sec.id);
+          {SECTIONS.filter((sec) => members.some((m) => m.role === sec.id)).map((sec) => {
+            const teamMembers = members
+              .filter((m) => m.role === sec.id)
+              .sort((a, b) => {
+                const rankA = getMemberRank(a);
+                const rankB = getMemberRank(b);
+                if (rankA !== rankB) return rankA - rankB;
+                return (a.name || "").localeCompare(b.name || "");
+              });
 
             return (
               <motion.div
@@ -178,7 +301,7 @@ export const MeetOurTeam = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-items-center sm:justify-items-start">
                   {teamMembers.length > 0 ? (
                     teamMembers.map((member) => (
-                      <MemberCard key={member.id} member={member} />
+                      <MemberCard key={member.id || member.key} member={member} />
                     ))
                   ) : (
                     <div className="col-span-full w-full py-10 px-6 rounded-2xl border border-dashed border-neutral-800 bg-neutral-900/40 text-center text-gray-500 font-mono text-sm">

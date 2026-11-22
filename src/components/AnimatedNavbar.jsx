@@ -59,7 +59,7 @@ const NAV_ITEMS = [
   },
 ];
 
-export const AnimatedNavbar = ({ activeTab: externalActiveTab, onChange: externalOnChange }) => {
+export const AnimatedNavbar = ({ activeTab: externalActiveTab, onChange: externalOnChange, onOpenPortal }) => {
   const [internalActiveTab, setInternalActiveTab] = useState('home');
   const activeTab = externalActiveTab !== undefined ? externalActiveTab : internalActiveTab;
 
@@ -118,6 +118,20 @@ export const AnimatedNavbar = ({ activeTab: externalActiveTab, onChange: externa
           </button>
         );
       })}
+
+      {/* Admin / Member Portal Trigger Button */}
+      {onOpenPortal && (
+        <button
+          onClick={onOpenPortal}
+          title="Admin & Member Portal"
+          className="p-2.5 w-10 h-10 sm:w-11 sm:h-11 rounded-full text-purple-400 hover:text-purple-300 hover:bg-purple-900/30 flex items-center justify-center transition border border-purple-500/20 ml-1"
+        >
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
+        </button>
+      )}
     </nav>
   );
 };
