@@ -48,28 +48,21 @@ export const MemberManagement = () => {
       return;
     }
 
-    const rootRef = ref(db);
-    const unsubscribe = onValue(rootRef, (snapshot) => {
-      if (snapshot.exists()) {
-        const val = snapshot.val();
-        let list = [];
-        if (val.members) {
-          if (Array.isArray(val.members)) {
-            list = val.members.filter(Boolean);
-          } else if (typeof val.members === "object") {
-            list = Object.keys(val.members).map((k) => ({ ...val.members[k], key: k }));
-          }
-        } else if (Array.isArray(val)) {
-          list = val.filter(Boolean);
-        } else if (typeof val === "object") {
-          list = Object.keys(val)
-            .filter((k) => k !== "events" && k !== "roles" && k !== "settings")
-            .map((k) => ({ ...val[k], key: k }));
-        }
-        setMembers(list);
-      } else {
+    const membersRef = ref(db, "members");
+    const unsubscribe = onValue(membersRef, (snapshot) => {
+      if (!snapshot.exists()) {
         setMembers([]);
+        return;
       }
+
+      const val = snapshot.val();
+      const list = Array.isArray(val)
+        ? val.filter(Boolean).map((member, index) => ({ ...member, id: member.id || String(index), key: String(index) }))
+        : Object.keys(val).map((key) => ({ ...val[key], id: val[key].id || key, key }));
+      setMembers(list);
+    }, (error) => {
+      console.warn("Firebase members read error:", error);
+      setMembers([]);
     });
 
     return () => unsubscribe();

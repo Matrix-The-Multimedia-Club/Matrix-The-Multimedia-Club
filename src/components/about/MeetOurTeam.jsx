@@ -148,38 +148,26 @@ export const MeetOurTeam = () => {
     }
 
     try {
-      const rootRef = ref(db);
+      const membersRef = ref(db, "members");
       const unsubscribe = onValue(
-        rootRef,
+        membersRef,
         (snapshot) => {
-          if (snapshot.exists()) {
-            const val = snapshot.val();
-            let parsedList = [];
-
-            if (val.members) {
-              if (Array.isArray(val.members)) {
-                parsedList = val.members.filter(Boolean);
-              } else if (typeof val.members === "object") {
-                parsedList = Object.keys(val.members).map((k) => ({ ...val.members[k], key: k }));
-              }
-            } else if (Array.isArray(val)) {
-              parsedList = val.filter(Boolean);
-            } else if (typeof val === "object") {
-              parsedList = Object.keys(val)
-                .filter((k) => k !== "events" && k !== "roles" && k !== "settings")
-                .map((k) => ({ ...val[k], key: k }));
-            }
-
-            if (parsedList.length > 0) {
-              const formatted = parsedList.map((m) => ({
-                ...m,
-                id: m.id || m.key,
-                avatar: resolveAvatar(m.avatar, m.id || m.key),
-                bio: m.bio || m.tagline || ""
-              }));
-              setMembers(formatted);
-            }
+          if (!snapshot.exists()) {
+            setMembers([]);
+            return;
           }
+
+          const val = snapshot.val();
+          const parsedList = Array.isArray(val)
+            ? val.filter(Boolean).map((member, index) => ({ ...member, id: member.id || String(index), key: String(index) }))
+            : Object.keys(val).map((key) => ({ ...val[key], id: val[key].id || key, key }));
+
+          const formatted = parsedList.map((member) => ({
+            ...member,
+            avatar: resolveAvatar(member.avatar, member.id || member.key),
+            bio: member.bio || member.tagline || ""
+          }));
+          setMembers(formatted);
         },
         (error) => {
           console.warn("Firebase Realtime Database read error:", error);
